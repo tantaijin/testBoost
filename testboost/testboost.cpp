@@ -3,11 +3,12 @@
 
 #include "stdafx.h"
 #include "dateExample\dateExample.h"
+#include "timeExample\timeExample.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	testDate();
-
+	//testDate();
+	testTime();
 	return 0;
 }
 
