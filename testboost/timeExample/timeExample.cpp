@@ -41,4 +41,25 @@ void testTime()
 	assert(p3.is_not_a_date_time());
 	ptime p4(pos_infin); // or neg_infin
 	assert(p4.is_special() && p4.is_infinity());
+	date dt = pt.date();
+	time_duration td6 = pt.time_of_day();
+	cout << "date: " << dt << " time: " << td6 << endl;
+	cout << to_iso_extended_string(pt) << endl;
+	tm t = to_tm(pt);
+	ptime p5 = from_time_t(time(0));
+	assert(p5.date() == day_clock::local_day());
+
+	time_period tp1(p5, hours(1));
+	time_period tp2(p5 + hours(1), hours(2));
+	assert(tp1.end() == tp2.begin());
+	tp1.shift(hours(1)); //平移1个小时
+	assert(tp1.is_after(p5) && tp1.intersects(tp2));// tp1现在在p5之后了 tp1与tp2相交了
+
+	tp2.expand(hours(10)); //向两端扩展10个小时
+	assert(tp2.contains(tp1));
+	time_iterator t_iter(p5, minutes(10));
+	for (; t_iter < p5+hours(1); ++t_iter)
+	{
+		cout << *t_iter << endl;
+	}
 }
