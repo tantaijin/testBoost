@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <vector>
 #include "smartptrExample.h"
 #include "boost\smart_ptr.hpp"
 
@@ -39,10 +40,66 @@ void testscoped_array()
 	cout << sa[10] << endl;
 }
 
+/*
+** 应用于桥接模式
+*/
+class Sample{
+private:
+	class Impl;
+	boost::shared_ptr<Impl> m_p;
+
+public:
+	Sample();
+	void print();
+};
+
+class Sample::Impl{
+public:
+	void print(){
+		cout << "print of Impl" << endl;
+	}
+};
+
+Sample::Sample(){
+	m_p = boost::make_shared<Impl>();
+}
+
+void Sample::print(){
+	m_p->print();
+}
+
 void testshared_ptr()
 {
 	boost::shared_ptr<std::exception> sp1(new std::bad_exception("error"));
 	boost::shared_ptr<std::bad_exception> sp2 = dynamic_pointer_cast<std::bad_exception>(sp1);
 	boost::shared_ptr<std::exception> sp3 = static_pointer_cast<std::exception>(sp2);
 	assert(sp3 == sp1);
+
+	boost::shared_ptr<string> ssp(boost::make_shared<string>("make_shared test"));
+	boost::shared_ptr<vector<int>> vsp(boost::make_shared<vector<int>>(10, 5));
+	cout << "begin: " << *vsp->begin() << " size: " << vsp->size() << endl;
+
+	{
+		typedef vector<boost::shared_ptr<int>> vtype;
+		vtype v(10);
+
+		for (vtype::iterator iter = v.begin(); iter != v.end(); iter++)
+		{
+			*iter = boost::make_shared<int>(1);
+			cout << *(*iter) << " ";
+		}
+		cout << endl;
+
+		boost::shared_ptr<int> p = v[9];
+		*p = 100;
+		cout << *v[9] << endl;
+	}
+
+	/*
+	** 桥接模式
+	*/
+	{
+		Sample s;
+		s.print();
+	}
 }
