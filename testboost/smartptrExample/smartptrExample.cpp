@@ -68,6 +68,36 @@ void Sample::print(){
 	m_p->print();
 }
 
+/*
+** 应用于工厂模式
+*/
+class abstract
+{
+public:
+	virtual void f() = 0;
+	virtual void g() = 0;
+
+protected:
+	virtual ~abstract(){}
+};
+
+class Impl2 :public abstract{
+public:
+	void f(){ cout << "f()" << endl; }
+	void g(){ cout << "g()" << endl; }
+};
+
+boost::shared_ptr<abstract> create(){
+	return boost::shared_ptr<abstract>(boost::make_shared<Impl2>());
+}
+
+/*
+** 高级用法
+*/
+void any_func(void *p){
+	cout << "any func()" << endl;
+}
+
 void testshared_ptr()
 {
 	boost::shared_ptr<std::exception> sp1(new std::bad_exception("error"));
@@ -102,4 +132,19 @@ void testshared_ptr()
 		Sample s;
 		s.print();
 	}
+	/*
+	** 工厂模式
+	*/
+	boost::shared_ptr<abstract> p = create();
+	p->f();
+	/*
+	**删除器的用法
+	*/
+	FILE *hfile = nullptr;
+	fopen_s(&hfile, "d:\\1.txt", "ab");
+	boost::shared_ptr<FILE> spf(hfile, fclose);
+	/*
+	** 高级用法
+	*/
+	boost::shared_ptr<void> pf((void*)0, any_func);
 }
