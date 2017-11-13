@@ -13,6 +13,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	testscoped_Ptr();
 	testscoped_array();
 	testshared_ptr();
+	testshared_array();
 	return 0;
 }
 

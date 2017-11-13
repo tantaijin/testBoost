@@ -148,3 +148,12 @@ void testshared_ptr()
 	*/
 	boost::shared_ptr<void> pf((void*)0, any_func);
 }
+
+void testshared_array()
+{
+	int *p = new int[10];
+	boost::shared_array<int> sa(p);
+	boost::shared_array<int> sa2 = sa;
+	sa2[0] = 10;
+	cout << "test shared_array: " << sa[0] << endl;
+}
