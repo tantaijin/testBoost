@@ -157,3 +157,22 @@ void testshared_array()
 	sa2[0] = 10;
 	cout << "test shared_array: " << sa[0] << endl;
 }
+
+void testweak_ptr()
+{
+	boost::shared_ptr<int> sp(boost::make_shared<int>(10));
+	boost::weak_ptr<int> wp(sp);
+	assert(wp.use_count() == 1);
+
+	if (!wp.expired()) // expired() <=> use_count()==0
+	{
+		boost::shared_ptr<int> sp2 = wp.lock(); //返回shared_ptr，不会影响计数
+		*sp2 = 100;
+		assert(wp.use_count() == 2);
+	}
+	assert(wp.use_count() == 1);
+	cout << "test weak_ptr: " << *sp << endl;
+	sp.reset();
+	assert(wp.expired()); // expired()==true的时候lock返回存储空指针的shared_ptr对象
+	assert(!wp.lock());
+}

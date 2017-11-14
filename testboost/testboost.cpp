@@ -14,6 +14,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	testscoped_array();
 	testshared_ptr();
 	testshared_array();
+	testweak_ptr();
 	return 0;
 }
 
