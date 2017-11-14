@@ -158,6 +158,15 @@ void testshared_array()
 	cout << "test shared_array: " << sa[0] << endl;
 }
 
+class self_shared : public boost::enable_shared_from_this < self_shared > {
+public:
+	self_shared(int x){ m_x = x; }
+	void print(){ cout << "self_shared print: " << m_x << endl; }
+	void set_x(int x){ m_x = x; }
+private:
+	int m_x;
+};
+
 void testweak_ptr()
 {
 	boost::shared_ptr<int> sp(boost::make_shared<int>(10));
@@ -175,4 +184,11 @@ void testweak_ptr()
 	sp.reset();
 	assert(wp.expired()); // expired()==true的时候lock返回存储空指针的shared_ptr对象
 	assert(!wp.lock());
+
+	// 不能是 self_shared ss; 然后ss.shared_from_this()编译没错但是会导致shared_ptr删除栈上的对象，出现未定义行为
+	boost::shared_ptr<self_shared> sp3 = boost::make_shared<self_shared>(2); 
+	sp3->print();
+	boost::shared_ptr<self_shared> sp4 = sp3->shared_from_this();
+	sp3->set_x(100);
+	sp4->print();
 }
