@@ -5,6 +5,7 @@
 #include "dateExample\dateExample.h"
 #include "timeExample\timeExample.h"
 #include "smartptrExample\smartptrExample.h"
+#include "poolExample\poolExample.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -15,6 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	testshared_ptr();
 	testshared_array();
 	testweak_ptr();
+	testpool();
 	return 0;
 }
 

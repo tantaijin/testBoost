@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dateExample\dateExample.h" />
+    <ClInclude Include="poolExample\poolExample.h" />
     <ClInclude Include="smartptrExample\smartptrExample.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -89,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dateExample\dateExample.cpp" />
+    <ClCompile Include="poolExample\poolExample.cpp" />
     <ClCompile Include="smartptrExample\smartptrExample.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
