@@ -81,6 +81,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommonTool\CommonTool.h" />
     <ClInclude Include="dateExample\dateExample.h" />
     <ClInclude Include="poolExample\poolExample.h" />
     <ClInclude Include="smartptrExample\smartptrExample.h" />
@@ -89,6 +90,7 @@
     <ClInclude Include="timeExample\timeExample.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommonTool\CommonTool.cpp" />
     <ClCompile Include="dateExample\dateExample.cpp" />
     <ClCompile Include="poolExample\poolExample.cpp" />
     <ClCompile Include="smartptrExample\smartptrExample.cpp" />

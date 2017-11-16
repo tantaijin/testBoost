@@ -6,6 +6,7 @@
 #include "timeExample\timeExample.h"
 #include "smartptrExample\smartptrExample.h"
 #include "poolExample\poolExample.h"
+#include "CommonTool\CommonTool.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -17,6 +18,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	testshared_array();
 	testweak_ptr();
 	testpool();
+	testCommonTool();
 	return 0;
 }
 
