@@ -7,6 +7,7 @@
 #include "smartptrExample\smartptrExample.h"
 #include "poolExample\poolExample.h"
 #include "CommonTool\CommonTool.h"
+#include "stringAndText\lexical_cast_example\lexical_cast_example.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -19,6 +20,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	testweak_ptr();
 	testpool();
 	testCommonTool();
+	test_lexical_cast();
 	return 0;
 }
 
