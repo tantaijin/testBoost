@@ -8,6 +8,8 @@
 #include "poolExample\poolExample.h"
 #include "CommonTool\CommonTool.h"
 #include "stringAndText\lexical_cast_example\lexical_cast_example.h"
+#include "stringAndText\format\format_example.h"
+#include "stringAndText\string_algo\string_algo_example.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -21,6 +23,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	testpool();
 	testCommonTool();
 	test_lexical_cast();
+	testFormat();
+	test_string_algo();
 	return 0;
 }
 

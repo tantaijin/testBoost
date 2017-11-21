@@ -86,7 +86,9 @@
     <ClInclude Include="poolExample\poolExample.h" />
     <ClInclude Include="smartptrExample\smartptrExample.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stringAndText\format\format_example.h" />
     <ClInclude Include="stringAndText\lexical_cast_example\lexical_cast_example.h" />
+    <ClInclude Include="stringAndText\string_algo\string_algo_example.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="timeExample\timeExample.h" />
   </ItemGroup>
@@ -99,7 +101,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="stringAndText\format\format_example.cpp" />
     <ClCompile Include="stringAndText\lexical_cast_example\lexical_cast_example.cpp" />
+    <ClCompile Include="stringAndText\string_algo\string_algo_example.cpp" />
     <ClCompile Include="testboost.cpp" />
     <ClCompile Include="timeExample\timeExample.cpp" />
   </ItemGroup>
