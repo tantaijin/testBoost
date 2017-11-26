@@ -89,6 +89,7 @@
     <ClInclude Include="stringAndText\format\format_example.h" />
     <ClInclude Include="stringAndText\lexical_cast_example\lexical_cast_example.h" />
     <ClInclude Include="stringAndText\string_algo\string_algo_example.h" />
+    <ClInclude Include="stringAndText\xpressive_example\xpressive_example.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="timeExample\timeExample.h" />
   </ItemGroup>
@@ -104,6 +105,7 @@
     <ClCompile Include="stringAndText\format\format_example.cpp" />
     <ClCompile Include="stringAndText\lexical_cast_example\lexical_cast_example.cpp" />
     <ClCompile Include="stringAndText\string_algo\string_algo_example.cpp" />
+    <ClCompile Include="stringAndText\xpressive_example\xpressive_example.cpp" />
     <ClCompile Include="testboost.cpp" />
     <ClCompile Include="timeExample\timeExample.cpp" />
   </ItemGroup>
