@@ -12,6 +12,7 @@ void test_xpressive_example()
 	assert(!boost::xpressive::regex_match("abbc", regx));
 
 	//\\d <= >[0-9] \w<=>[a-z] \s<=> (space)
-	boost::xpressive::cregex regxsfz = boost::xpressive::cregex::compile("\\d{6}(1|2)\\d{3}(0|1)\\d[0-3]\\d\\d{3}(x|\\d)");
+	boost::xpressive::cregex regxsfz = boost::xpressive::cregex::compile("\\d{6}(1|2)\\d{3}(0|1)\\d[0-3]\\d\\d{3}(x|\\d)", 
+		boost::xpressive::icase); // icase  ingore case sentive
 	assert(boost::xpressive::regex_match("36048119880228552x", regxsfz));
 }
