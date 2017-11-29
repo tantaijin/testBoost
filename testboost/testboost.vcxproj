@@ -91,6 +91,7 @@
     <ClInclude Include="stringAndText\string_algo\string_algo_example.h" />
     <ClInclude Include="stringAndText\xpressive_example\xpressive_example.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="testExample\testExample.h" />
     <ClInclude Include="timeExample\timeExample.h" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +108,7 @@
     <ClCompile Include="stringAndText\string_algo\string_algo_example.cpp" />
     <ClCompile Include="stringAndText\xpressive_example\xpressive_example.cpp" />
     <ClCompile Include="testboost.cpp" />
+    <ClCompile Include="testExample\testExample.cpp" />
     <ClCompile Include="timeExample\timeExample.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
