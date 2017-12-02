@@ -12,6 +12,7 @@
 #include "stringAndText\string_algo\string_algo_example.h"
 #include "stringAndText\xpressive_example\xpressive_example.h"
 #include "testExample\testExample.h"
+#include "ContainerExample\ArrayExample\ArrayExample.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -29,6 +30,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	test_string_algo();
 	test_xpressive_example();
 	testTest();
+	TestArray();
 	return 0;
 }
 
