@@ -96,6 +96,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="testExample\testExample.h" />
     <ClInclude Include="timeExample\timeExample.h" />
+    <ClInclude Include="unordered_example\unordered_example.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommonTool\CommonTool.cpp" />
@@ -114,6 +115,7 @@
     <ClCompile Include="testboost.cpp" />
     <ClCompile Include="testExample\testExample.cpp" />
     <ClCompile Include="timeExample\timeExample.cpp" />
+    <ClCompile Include="unordered_example\unordered_example.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

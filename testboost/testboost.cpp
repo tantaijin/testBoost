@@ -13,24 +13,26 @@
 #include "stringAndText\xpressive_example\xpressive_example.h"
 #include "testExample\testExample.h"
 #include "ContainerExample\ArrayExample\ArrayExample.h"
+#include "unordered_example\unordered_example.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//testDate();
 	//testTime();
-	testscoped_Ptr();
-	testscoped_array();
-	testshared_ptr();
-	testshared_array();
-	testweak_ptr();
-	testpool();
-	testCommonTool();
-	test_lexical_cast();
-	testFormat();
-	test_string_algo();
-	test_xpressive_example();
-	testTest();
-	TestArray();
+	//testscoped_Ptr();
+	//testscoped_array();
+	//testshared_ptr();
+	//testshared_array();
+	//testweak_ptr();
+	//testpool();
+	//testCommonTool();
+	//test_lexical_cast();
+	//testFormat();
+	//test_string_algo();
+	//test_xpressive_example();
+	//testTest();
+	//TestArray();
+	test_unordered();
 	return 0;
 }
 
