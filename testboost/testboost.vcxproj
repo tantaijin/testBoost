@@ -85,6 +85,8 @@
   <ItemGroup>
     <ClInclude Include="CommonTool\CommonTool.h" />
     <ClInclude Include="ContainerExample\ArrayExample\ArrayExample.h" />
+    <ClInclude Include="ContainerExample\bimap_example\bimap_example.h" />
+    <ClInclude Include="ContainerExample\unordered_example\unordered_example.h" />
     <ClInclude Include="dateExample\dateExample.h" />
     <ClInclude Include="poolExample\poolExample.h" />
     <ClInclude Include="smartptrExample\smartptrExample.h" />
@@ -96,11 +98,12 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="testExample\testExample.h" />
     <ClInclude Include="timeExample\timeExample.h" />
-    <ClInclude Include="unordered_example\unordered_example.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommonTool\CommonTool.cpp" />
     <ClCompile Include="ContainerExample\ArrayExample\ArrayExample.cpp" />
+    <ClCompile Include="ContainerExample\bimap_example\bimap_example.cpp" />
+    <ClCompile Include="ContainerExample\unordered_example\unordered_example.cpp" />
     <ClCompile Include="dateExample\dateExample.cpp" />
     <ClCompile Include="poolExample\poolExample.cpp" />
     <ClCompile Include="smartptrExample\smartptrExample.cpp" />
@@ -115,7 +118,6 @@
     <ClCompile Include="testboost.cpp" />
     <ClCompile Include="testExample\testExample.cpp" />
     <ClCompile Include="timeExample\timeExample.cpp" />
-    <ClCompile Include="unordered_example\unordered_example.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

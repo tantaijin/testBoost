@@ -13,7 +13,8 @@
 #include "stringAndText\xpressive_example\xpressive_example.h"
 #include "testExample\testExample.h"
 #include "ContainerExample\ArrayExample\ArrayExample.h"
-#include "unordered_example\unordered_example.h"
+#include "ContainerExample\unordered_example\unordered_example.h"
+#include "ContainerExample\bimap_example\bimap_example.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -32,7 +33,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//test_xpressive_example();
 	//testTest();
 	//TestArray();
-	test_unordered();
+	//test_unordered();
+	test_bimap();
 	return 0;
 }
 
