@@ -1,7 +1,22 @@
 #include "stdafx.h"
 #include "bimap_example.h"
 #include "boost/bimap.hpp"
+#include "boost/assign.hpp"
+#include "boost/assign/list_of.hpp"
 #include "boost/typeof/typeof.hpp"
+#include "boost/bimap/unordered_set_of.hpp"
+#include "boost/bimap/multiset_of.hpp"
+#include "boost/bimap/list_of.hpp"
+#include "boost/bimap/unconstrained_set_of.hpp"
+#include "boost/bimap/vector_of.hpp"
+
+template<typename T>
+void print_map(T &m){
+	for (BOOST_AUTO(pos, m.begin()); pos != m.end(); ++pos) // not pos = m.begin()
+	{
+		cout << pos->first << "<-->" << pos->second << endl;
+	}
+}
 
 void test_bimap()
 {
@@ -25,4 +40,33 @@ void test_bimap()
 		cout << "[" << pos->first << ", " << pos->second << "] ";
 	}
 	cout << endl; // [1, one] [2, two] [3, three] [4, four] [5, five]
+
+	//boost::bimap<int, boost::bimaps::unordered_set_of<std::string>> bm2;
+	//boost::bimap<boost::bimaps::multiset_of<std::string>, boost::bimaps::multiset_of<std::string>> bm2;
+	//boost::bimap<boost::bimaps::unordered_set_of<std::string>, boost::bimaps::list_of<std::string>> bm2;
+	//boost::bimap<boost::bimaps::vector_of<int>, boost::bimaps::unconstrained_set_of<std::string>> bm2;
+	boost::bimap<boost::bimaps::multiset_of<int>, boost::bimaps::multiset_of<std::string>> bm2;
+
+	bm2.left.insert(std::make_pair(1, "111"));
+	bm2.left.insert(std::make_pair(2, "222"));
+	bm2.left.insert(std::make_pair(2, "555"));
+
+	bm2.right.insert(std::make_pair("hello", 4));
+	bm2.right.insert(std::make_pair("world", 3));
+	bm2.right.insert(std::make_pair("!", 2));
+
+	print_map(bm2.left);
+	/*
+	1<-->111
+	2<-->222
+	2<-->555
+	2<-->!
+	3<-->world
+	4<-->hello
+	*/
+	boost::bimap<boost::bimaps::set_of<int>, boost::bimaps::vector_of<std::string>> bm3;
+	bm3.left[2] = "ttt";
+	print_map(bm3.left);
+	//2<-->ttt
+	//bm3.right.insert(std::make_pair("error", 2)); //error
 }
