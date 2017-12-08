@@ -69,4 +69,42 @@ void test_bimap()
 	print_map(bm3.left);
 	//2<-->ttt
 	//bm3.right.insert(std::make_pair("error", 2)); //error
+
+	boost::bimap<boost::bimaps::tagged<int, struct id>, boost::bimaps::tagged<std::string, struct name>> bm4;
+	bm4.by<name>().insert(std::make_pair("bynametest", 2017));
+	bm4.right.insert(std::make_pair("righttest", 20172));
+	print_map(bm4.by<name>());
+	/*
+	bynametest<-->2017
+	righttest<-->20172
+	*/
+
+	typedef boost::bimap<boost::bimaps::multiset_of<int>, boost::bimaps::multiset_of<std::string>> bmType;
+	bmType bm5 = boost::assign::list_of<bmType::relation>(1, "one")(2, "two");
+	print_map(bm5.left);
+	/*
+	1<-->one
+	2<-->two
+	*/
+
+	boost::assign::insert(bm5.right)("three", 3)("four", 4);
+	print_map(bm5.right);
+	/*
+	four<-->4
+	one<-->1
+	three<-->3
+	two<-->2
+	*/
+	print_map(bm5.left);
+	/*
+	1<-->one
+	2<-->two
+	3<-->three
+	4<-->four
+	*/
+
+	typedef boost::bimap<boost::bimaps::multiset_of<int>, boost::bimaps::vector_of<std::string>> bmivType;
+	bmivType bm6;
+	boost::assign::push_back(bm6.right)("bmivType", 1);
+	print_map(bm6.right); // bmivType<-->1
 }
