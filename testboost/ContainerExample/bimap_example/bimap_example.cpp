@@ -9,6 +9,7 @@
 #include "boost/bimap/list_of.hpp"
 #include "boost/bimap/unconstrained_set_of.hpp"
 #include "boost/bimap/vector_of.hpp"
+#include "boost/bimap/support/lambda.hpp"
 
 template<typename T>
 void print_map(T &m){
@@ -107,4 +108,16 @@ void test_bimap()
 	bmivType bm6;
 	boost::assign::push_back(bm6.right)("bmivType", 1);
 	print_map(bm6.right); // bmivType<-->1
+
+	typedef boost::bimap<int, std::string> bmisType;
+	bmisType bm7 = boost::assign::list_of<bmisType::relation>(111, "111")(2, "monkey");
+	BOOST_AUTO(pos7, bm7.left.find(111));
+	print_map(bm7.left); // 111<-->111
+	bm7.left.replace_key(pos7, 123);
+	bm7.left.replace_data(pos7, "123");
+	print_map(bm7.left); // 123<-->123
+
+	bm7.left.modify_key(pos7, boost::bimaps::_key = 2);
+	bm7.left.modify_data(pos7, boost::bimaps::_data = "monkey");
+	assert(bm7.left.size() == 1);
 }
