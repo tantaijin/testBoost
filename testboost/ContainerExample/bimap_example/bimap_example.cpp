@@ -117,7 +117,24 @@ void test_bimap()
 	bm7.left.replace_data(pos7, "123");
 	print_map(bm7.left); // 123<-->123
 
-	bm7.left.modify_key(pos7, boost::bimaps::_key = 2);
-	bm7.left.modify_data(pos7, boost::bimaps::_data = "monkey");
-	assert(bm7.left.size() == 1);
+	//bm7.left.modify_key(pos7, boost::bimaps::_key = 2);
+	bm7.left.modify_data(pos7, boost::bimaps::_data = "monkey"); // can not using modify_key together
+	//assert(bm7.left.size() == 1);
+
+	bmisType bm8;
+	bm8 = boost::assign::list_of<bmisType::relation>(3, "33");
+	BOOST_AUTO(pos8, bm8.left.find(3));
+
+	BOOST_AUTO(posRight, bm8.project_right(pos8));
+	cout << posRight->first << ", " << posRight->second << endl; // 33, 3
+
+	typedef	boost::bimap<boost::bimaps::set_of<boost::bimaps::tagged<int, struct id>>, 
+		boost::bimaps::multiset_of <boost::bimaps::tagged< std::string, struct name >> > bmssType;
+	bmssType bm9 = boost::assign::list_of<bmssType::relation>(4, "44");
+	boost::assign::insert(bm9.by<id>())(5, "55");
+	boost::assign::insert(bm9.by<name>())("66", 6);
+	print_map(bm9.left);
+	BOOST_AUTO(pos9Right, bm9.by<name>().find("66")); BOOST_AUTO(pos9Left, bm9.project<id>(pos9Right));
+	--pos9Left;
+	cout << pos9Left->first << "==" << pos9Left->second << endl; // 5==55
 }
