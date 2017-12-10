@@ -15,6 +15,7 @@
 #include "ContainerExample\ArrayExample\ArrayExample.h"
 #include "ContainerExample\unordered_example\unordered_example.h"
 #include "ContainerExample\bimap_example\bimap_example.h"
+#include "ContainerExample\circular_buffer_example\circular_buffer_example.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -34,7 +35,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//testTest();
 	//TestArray();
 	//test_unordered();
-	test_bimap();
+	//test_bimap();
+	test_circular_buffer_example();
 	return 0;
 }
 
