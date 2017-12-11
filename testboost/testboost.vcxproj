@@ -87,6 +87,7 @@
     <ClInclude Include="ContainerExample\ArrayExample\ArrayExample.h" />
     <ClInclude Include="ContainerExample\bimap_example\bimap_example.h" />
     <ClInclude Include="ContainerExample\circular_buffer_example\circular_buffer_example.h" />
+    <ClInclude Include="ContainerExample\tuple_example\tuple_example.h" />
     <ClInclude Include="ContainerExample\unordered_example\unordered_example.h" />
     <ClInclude Include="dateExample\dateExample.h" />
     <ClInclude Include="poolExample\poolExample.h" />
@@ -105,6 +106,7 @@
     <ClCompile Include="ContainerExample\ArrayExample\ArrayExample.cpp" />
     <ClCompile Include="ContainerExample\bimap_example\bimap_example.cpp" />
     <ClCompile Include="ContainerExample\circular_buffer_example\circular_buffer_example.cpp" />
+    <ClCompile Include="ContainerExample\tuple_example\tuple_example.cpp" />
     <ClCompile Include="ContainerExample\unordered_example\unordered_example.cpp" />
     <ClCompile Include="dateExample\dateExample.cpp" />
     <ClCompile Include="poolExample\poolExample.cpp" />
