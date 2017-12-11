@@ -2,6 +2,7 @@
 #include "circular_buffer_example.h"
 #include "boost/circular_buffer.hpp"
 #include "boost/typeof/typeof.hpp"
+#include "boost/assign.hpp"
 
 template<typename T>
 void print_stl(T &x)
@@ -33,4 +34,12 @@ void test_circular_buffer_example()
 	print_stl(cb); // 2 4 5 6 7
 	cb.push_front(8);
 	print_stl(cb); // 8 2 4 5 6
+
+	boost::circular_buffer_space_optimized<int> cb2(10);
+	boost::assign::push_back(cb2)(1), 2, 3, 4;
+	assert(cb2.size() == 4);
+	assert(cb2.capacity() == 10);
+
+	cb2.resize(100, 10);
+	assert(cb2.size() == cb2.capacity());
 }
