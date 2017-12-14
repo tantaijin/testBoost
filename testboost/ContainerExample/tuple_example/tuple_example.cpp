@@ -36,6 +36,9 @@ void test_tuple_example()
 	cout << i << ", " << str << endl; // 1, hello world
 	int j;
 	boost::tie(j, boost::tuples::ignore) = tup_func();
-
 	print_tuple(tp2); // 1,2,hello world,
+	cout << endl;
+
+	typedef boost::tuple<int, std::string> tisType;
+	assert(typeid(int) == typeid(boost::tuples::element<0, tisType>::type));
 }
