@@ -17,6 +17,7 @@
 #include "ContainerExample\bimap_example\bimap_example.h"
 #include "ContainerExample\circular_buffer_example\circular_buffer_example.h"
 #include "ContainerExample\tuple_example\tuple_example.h"
+#include "ContainerExample\anyExample\anyExample.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -38,7 +39,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//test_unordered();
 	//test_bimap();
 	//test_circular_buffer_example();
-	test_tuple_example();
+	//test_tuple_example();
+	test_any_example();
 	return 0;
 }
 

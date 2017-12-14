@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonTool\CommonTool.h" />
+    <ClInclude Include="ContainerExample\anyExample\anyExample.h" />
     <ClInclude Include="ContainerExample\ArrayExample\ArrayExample.h" />
     <ClInclude Include="ContainerExample\bimap_example\bimap_example.h" />
     <ClInclude Include="ContainerExample\circular_buffer_example\circular_buffer_example.h" />
@@ -103,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommonTool\CommonTool.cpp" />
+    <ClCompile Include="ContainerExample\anyExample\anyExample.cpp" />
     <ClCompile Include="ContainerExample\ArrayExample\ArrayExample.cpp" />
     <ClCompile Include="ContainerExample\bimap_example\bimap_example.cpp" />
     <ClCompile Include="ContainerExample\circular_buffer_example\circular_buffer_example.cpp" />
