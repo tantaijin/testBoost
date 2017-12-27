@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "variant_example.h"
 #include "boost/variant.hpp"
+#include "boost/typeof/typeof.hpp"
 
 struct var_print :public boost::static_visitor < > {
 	template <typename T>
@@ -32,4 +33,7 @@ void test_variant_example()
 	boost::apply_visitor(vp, v3); // 2
 	v3 = 2.3;
 	boost::apply_visitor(vp, v3); // 4.6
+
+	BOOST_AUTO(vp2, boost::apply_visitor(var_print()));
+	vp2(v3); // 9.2
 }
