@@ -1,0 +1,10 @@
+﻿<conf>
+	<gui>1</gui>
+	<theme>matrix</theme>
+	<urls>
+		<url>url1</url>
+		<url>url2</url>
+		<url>url3</url>
+	</urls>
+	<clock_style>24</clock_style>
+</conf>
