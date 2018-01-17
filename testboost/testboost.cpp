@@ -21,6 +21,7 @@
 #include "ContainerExample\variant_example\variant_example.h"
 #include "ContainerExample\multi_array_example\multi_array_example.h"
 #include "ContainerExample\property_tree_example\property_tree_example.h"
+#include "suanfa\suanfa.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -46,7 +47,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//test_any_example();
 	//test_variant_example();
 	//test_multi_array();
-	test_property_tree();
+	//test_property_tree();
+	test_suanfa();
 	return 0;
 }
 

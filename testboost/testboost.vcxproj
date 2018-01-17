@@ -101,6 +101,7 @@
     <ClInclude Include="stringAndText\lexical_cast_example\lexical_cast_example.h" />
     <ClInclude Include="stringAndText\string_algo\string_algo_example.h" />
     <ClInclude Include="stringAndText\xpressive_example\xpressive_example.h" />
+    <ClInclude Include="suanfa\suanfa.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="testExample\testExample.h" />
     <ClInclude Include="timeExample\timeExample.h" />
@@ -127,6 +128,7 @@
     <ClCompile Include="stringAndText\lexical_cast_example\lexical_cast_example.cpp" />
     <ClCompile Include="stringAndText\string_algo\string_algo_example.cpp" />
     <ClCompile Include="stringAndText\xpressive_example\xpressive_example.cpp" />
+    <ClCompile Include="suanfa\suanfa.cpp" />
     <ClCompile Include="testboost.cpp" />
     <ClCompile Include="testExample\testExample.cpp" />
     <ClCompile Include="timeExample\timeExample.cpp" />
