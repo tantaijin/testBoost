@@ -1,0 +1,13 @@
+{
+    "conf": 
+    {
+        "gui": 1,
+        "theme": "jsontest",
+        "urls": 
+        {
+            "url": "url1"
+        },
+        "clock_style":24
+
+    }
+}

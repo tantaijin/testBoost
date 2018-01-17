@@ -1,10 +1,11 @@
-﻿<conf>
-	<gui>1</gui>
-	<theme>matrix</theme>
-	<urls>
-		<url>url1</url>
-		<url>url2</url>
-		<url>url3</url>
-	</urls>
-	<clock_style>24</clock_style>
-</conf>
+<?xml version="1.0" encoding="utf-8"?>
+<conf>
+	
+	
+	
+	
+<gui>1</gui><theme>matrix road</theme><urls>
+		
+		
+		
+	<url>url4</url><url>url2</url><url>url3</url><url>url5</url><url>url5</url><url>url5</url><url>url5</url></urls><clock_style>24</clock_style></conf>

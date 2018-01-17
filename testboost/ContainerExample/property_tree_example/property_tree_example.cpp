@@ -4,6 +4,12 @@
 #include "boost\property_tree\xml_parser.hpp"
 #include "boost\typeof\typeof.hpp"
 
+#include "boost\property_tree\json_parser.hpp"
+
+#include "boost\property_tree\ini_parser.hpp" // for ini
+
+#include "boost\property_tree\info_parser.hpp" // for info, using by boost
+
 /*
 <conf>
 <gui>1</gui>
@@ -31,4 +37,28 @@ void test_property_tree()
 		cout << pos->second.data() << " ";
 	}
 	cout << endl; // url1 url2 url3
+
+	pt.put("conf.theme", "matrix road");
+	pt.put("conf.urls.url", "url4"); // will change url1 to url4
+	//pt.add("conf.urls.url", "url5");
+	boost::property_tree::xml_parser::write_xml("..\\xml\\config.xml", pt);
+
+	/*
+	{
+	"conf":
+	{
+	"gui": 1,
+	"theme": "jsontest",
+	"urls":
+	{
+	"url": "url1"
+	},
+	"clock_style":24
+
+	}
+	}
+	*/
+	boost::property_tree::ptree pt2;
+	boost::property_tree::json_parser::read_json("..\\xml\\config.json", pt2);
+	cout << pt2.get<std::string>("conf.theme") << endl; // jsontest 
 }
