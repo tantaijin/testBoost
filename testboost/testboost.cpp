@@ -24,6 +24,8 @@
 #include "suanfa\suanfa.h"
 #include "number\number_test.h"
 #include "number\rational_test.h"
+#include "number\crc_test.h"
+#include "number\random_test.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -52,7 +54,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	//test_property_tree();
 	//test_suanfa();
 	//test_integer();
-	test_rational();
+	//test_rational();
+	//test_crc();
+	test_random();
 	return 0;
 }
 

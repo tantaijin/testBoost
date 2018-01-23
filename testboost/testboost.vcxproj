@@ -94,7 +94,9 @@
     <ClInclude Include="ContainerExample\unordered_example\unordered_example.h" />
     <ClInclude Include="ContainerExample\variant_example\variant_example.h" />
     <ClInclude Include="dateExample\dateExample.h" />
+    <ClInclude Include="number\crc_test.h" />
     <ClInclude Include="number\number_test.h" />
+    <ClInclude Include="number\random_test.h" />
     <ClInclude Include="number\rational_test.h" />
     <ClInclude Include="poolExample\poolExample.h" />
     <ClInclude Include="smartptrExample\smartptrExample.h" />
@@ -120,7 +122,9 @@
     <ClCompile Include="ContainerExample\unordered_example\unordered_example.cpp" />
     <ClCompile Include="ContainerExample\variant_example\variant_example.cpp" />
     <ClCompile Include="dateExample\dateExample.cpp" />
+    <ClCompile Include="number\crc_test.cpp" />
     <ClCompile Include="number\number_test.cpp" />
+    <ClCompile Include="number\random_test.cpp" />
     <ClCompile Include="number\rational_test.cpp" />
     <ClCompile Include="poolExample\poolExample.cpp" />
     <ClCompile Include="smartptrExample\smartptrExample.cpp" />
