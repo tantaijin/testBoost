@@ -28,6 +28,7 @@
 #include "number\random_test.h"
 #include "function_and_callback\result_of_example.h"
 #include "function_and_callback\ref_example.h"
+#include "function_and_callback\bind_and_function_example.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -60,7 +61,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//test_crc();
 	//test_random();
 	//test_result_of();
-	test_ref();
+	//test_ref();
+	test_bind();
 	return 0;
 }
 
