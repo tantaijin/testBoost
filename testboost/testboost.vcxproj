@@ -97,6 +97,7 @@
     <ClInclude Include="function_and_callback\bind_and_function_example.h" />
     <ClInclude Include="function_and_callback\ref_example.h" />
     <ClInclude Include="function_and_callback\result_of_example.h" />
+    <ClInclude Include="function_and_callback\signal_example.h" />
     <ClInclude Include="number\crc_test.h" />
     <ClInclude Include="number\number_test.h" />
     <ClInclude Include="number\random_test.h" />
@@ -128,6 +129,7 @@
     <ClCompile Include="function_and_callback\bind_and_function_example.cpp" />
     <ClCompile Include="function_and_callback\ref_example.cpp" />
     <ClCompile Include="function_and_callback\result_of_example.cpp" />
+    <ClCompile Include="function_and_callback\signal_example.cpp" />
     <ClCompile Include="number\crc_test.cpp" />
     <ClCompile Include="number\number_test.cpp" />
     <ClCompile Include="number\random_test.cpp" />
