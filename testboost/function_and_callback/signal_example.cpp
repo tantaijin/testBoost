@@ -1,6 +1,8 @@
 #include "stdafx.h"
+#include <numeric>
 #include "signal_example.h"
 #include "boost/signals2.hpp"
+#include "boost\typeof\typeof.hpp"
 
 void slot1(){
 	cout << "slot1" << endl;
@@ -17,8 +19,28 @@ void slot3(){
 template <int N>
 class slots{
 public:
-	void operator()(){
+	int operator()(){
 		cout << "slot " << N << endl;
+		return N;
+	}
+};
+
+template <typename T>
+class combiner{
+	T v;
+public:
+	typedef std::pair<T, T> result_type;
+	combiner(T t = T()) :v(t){}
+	template <typename InputIterator>
+	result_type operator()(InputIterator begin, InputIterator end) {
+		if (begin == end) {
+			return result_type();
+		}
+		std::vector<T> vec(begin, end);
+		T sum = std::accumulate(vec.begin(), vec.end(), v);
+		T max = *std::max_element(vec.begin(), vec.end());
+
+		return result_type(sum, max);
 	}
 };
 
@@ -35,7 +57,7 @@ void test_signal()
 	slot2
 	*/
 
-	boost::signals2::signal<void()> sig2;
+	boost::signals2::signal<int()> sig2;
 	sig2.connect(slots<1>(), boost::signals2::at_back);
 	sig2.connect(5, slots<51>(), boost::signals2::at_front);
 	sig2.connect(5, slots<52>(), boost::signals2::at_front);
@@ -49,4 +71,43 @@ void test_signal()
 	slot 51
 	slot 1
 	*/
+
+	boost::signals2::signal<int()> sig3;
+	sig3.connect(slots<1>());
+	sig3.connect(slots<2>());
+	sig3.connect(slots<3>());
+	sig3.connect(slots<4>());
+	cout << "result is :" << *sig3() << endl;
+	/*
+	slot 1
+	slot 2
+	slot 3
+	slot 4
+	result is :4
+	*/
+
+	boost::signals2::signal<int(), combiner<int>> sig4;
+	sig4.connect(slots<5>());
+	sig4.connect(slots<6>());
+	sig4.connect(slots<7>());
+
+	BOOST_AUTO(x, sig4());
+	cout << x.first << " - " << x.second << endl;
+	/*
+	slot 5
+	slot 6
+	slot 7
+	18 - 7
+	*/
+
+	boost::signals2::signal<int()> sig5;
+	assert(sig5.empty());
+	sig5.connect(0, slots<11>());
+	sig5.connect(0, slots<12>());
+	sig5.connect(1, slots<13>());
+	assert(sig5.num_slots() == 3);
+	sig5.disconnect(0);
+	assert(sig5.num_slots() == 1);
+	//sig5.disconnect(slots<13>()); // can't build
+	//assert(sig5.num_slots() == 0);
 }
